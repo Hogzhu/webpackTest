@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack-dev-server --open"
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js"
   },
   "author": "Hogzhu",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.3.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.7.0",
@@ -18,6 +19,7 @@
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^3.6.0",
     "html-webpack-plugin": "^4.2.1",
+    "postcss-loader": "^3.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass-loader": "^7.1.0",

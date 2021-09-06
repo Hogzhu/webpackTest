@@ -4,16 +4,20 @@ const webpack = require('webpack'); // 引入webpack模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, './src/index.js'),
+  // entry: path.join(__dirname, './src/index.js'),
+  entry: {
+    index: path.join(__dirname, './src/index.js'),
+    two: path.join(__dirname, './src/two.js'),
+  },
   output: {
     path: path.join(__dirname, './dist'), // 会自动生成一个dist目录
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
       {
         test: /\.css$/, // 正则匹配以.css结尾的文件
-        use: ['style-loader', 'css-loader'] // 需要使用的loader，一定需要这个顺序，因为loader是从右往左编译的
+        use: ['style-loader', 'css-loader', 'postcss-loader'] // 需要使用的loader，一定需要这个顺序，因为loader是从右往左编译的
       },
       {
         test: /\.(scss|sass)$/, // 正则匹配以.scss和.sass结尾的文件
