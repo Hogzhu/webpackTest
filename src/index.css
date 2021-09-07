@@ -3,7 +3,7 @@ body {
   color: red;
 }
 
-#root div {
+#root {
   width: 100px;
   margin-top: 20px;
   transform: rotate(45reg);
